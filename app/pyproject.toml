@@ -8,6 +8,9 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 streamlit = "^1.32.2"
+ollama = "^0.1.8"
+langchain = "^0.1.14"
+langchain-community = "^0.0.31"
 
 
 [build-system]

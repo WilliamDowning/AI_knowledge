@@ -1,6 +1,17 @@
-import streamlit as st
-import openai
+#import streamlit as st
+import ollama
+
+stream = ollama.chat(
+    model='llama2',
+    messages=[{'role': 'user', 'content': 'Is the sky blue?'}],
+    stream=True
+)
+
+for chunk in stream:
+    print(chunk['message']['content'], end='', flush=True)
+
 # Set your OpenAI API key here
+'''
 openai.api_key = 'YOUR_OPENAI_API_KEY'
 def main():
     st.title("Document Processing and QA Chatbot")
@@ -34,5 +45,6 @@ def answer_question(document, question):
     # Display the answer
     st.write(f"**Question:** {question}")
     st.write(f"**Answer:** {answer}")
-if __name__ == "__main__":
+    if __name__ == "__main__":
     main()
+'''
